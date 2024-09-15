@@ -13,6 +13,8 @@ spring:
           uri: lb://REGISTRATION
           predicates:
             - Path=/registration/**
+          filters:
+            - RewritePath=/registration/(?<segment>.*), /api/${segment}
         - id: TicketSystem
           uri: lb://TICKET
           predicates:
