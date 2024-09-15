@@ -9,10 +9,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: RegistrationSystem
+        - id: registration-route
           uri: lb://registration
           predicates:
-            - Path=/team/**
+            - Path=/registration/**
         - id: TicketSystem
           uri: lb://ticket
           predicates:
