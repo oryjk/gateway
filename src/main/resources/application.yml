@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-service
+
+
+  cloud:
+    gateway:
+      routes:
+        - id: RegistrationSystem
+          uri: lb://registration
+          predicates:
+            - Path=/team/**
+        - id: TicketSystem
+          uri: lb://ticket
+          predicates:
+            - Path=/ticket/**
+  main:
+    web-application-type: reactive
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://49.234.55.170:8761/eureka/
