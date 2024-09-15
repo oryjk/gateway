@@ -10,11 +10,11 @@ spring:
     gateway:
       routes:
         - id: registration-route
-          uri: lb://registration
+          uri: lb://REGISTRATION
           predicates:
             - Path=/registration/**
         - id: TicketSystem
-          uri: lb://ticket
+          uri: lb://TICKET
           predicates:
             - Path=/ticket/**
   main:
